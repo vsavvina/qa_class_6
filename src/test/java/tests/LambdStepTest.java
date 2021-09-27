@@ -15,15 +15,15 @@ public class LambdStepTest {
 
     step("Opening the GitHub pages", () -> {
       open("https://github.com/");
-    } );
+    });
 
     step("Search for a repository", () -> {
       $(".header-search-input").setValue(repository).submit();
-    } );
+    });
 
     step("Going to the first search result", () -> {
       $$("ul.repo-list li").first().$("a").click();
-    } );
+    });
 
     step("Checking the visibility of Issues", () -> {
       $x("//*[@id=\"repository-container-header\"]/nav/ul/li[2]")
