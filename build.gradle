@@ -13,6 +13,8 @@ repositories {
 allure {
     version = "2.15.0"
     autoconfigure = true
+    configuration = "testImplementation"
+    aspectjVersion = '1.9.5'
 
     useJUnit5 {
         version = "2.15.0"
@@ -27,6 +29,12 @@ dependencies {
             'com.codeborne:selenide:5.22.3'
     )
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.29'
+}
+
+configurations {
+    testCompile
 }
 
 test {
