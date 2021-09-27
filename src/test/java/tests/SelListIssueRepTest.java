@@ -8,9 +8,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class SelListIssueRep {
+public class SelListIssueRepTest {
 
-String repository = "vsavvina/qa_class_6";
+private final static String repository = "vsavvina/qa_class_6";
 
   @Test
   public void IssTestGit() {
