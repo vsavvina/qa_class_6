@@ -9,7 +9,9 @@ import io.qameta.allure.selenide.AllureSelenide;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SelListIssueRep {
-String repository = "vsavvina/java_8_3_class";
+
+String repository = "vsavvina/qa_class_6";
+
   @Test
   public void IssTestGit() {
     SelenideLogger.addListener("allure", new AllureSelenide());
