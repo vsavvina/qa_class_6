@@ -1,5 +1,7 @@
 package tests;
 
+import static com.codeborne.selenide.Condition.*;
+
 import org.junit.jupiter.api.Test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -15,8 +17,10 @@ String repository = "vsavvina/java_8_3_class";
     open("https://github.com/");
 
     $(".header-search-input").setValue(repository).
-            as("Клик по полю поиска").submit();
-
-    sleep(3000);
+            as("Search for a repository").submit();
+    $$("ul.repo-list li").first().$("a").
+            as("Going to the first search result").click();
+    $x("//*[@id=\"repository-container-header\"]/nav/ul/li[2]").
+            as("Checking the visibility of Issues").should(visible);
   }
 }
